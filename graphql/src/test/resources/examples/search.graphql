@@ -1,0 +1,35 @@
+query searchRequest {
+    search(keyword: "betula", limit: 3) {
+        id,
+        score
+    }
+}
+
+query properties {
+    properties(plantId: "b5cdece0-cabf-4a8e-abfb-8a0ecebb4884") {
+        id,
+        name,
+        type,
+        value
+    }
+}
+
+query images {
+    images(plantId: "b5cdece0-cabf-4a8e-abfb-8a0ecebb4884", limit:3) {
+        id,
+        width,
+        height,
+        url
+    }
+}
+
+query description {
+    search(keyword: "betula", limit: 3) {
+        id,
+        score
+    },
+    description(plantId: "b5cdece0-cabf-4a8e-abfb-8a0ecebb4884", limit: 3) {
+        id,
+        text
+    }
+}

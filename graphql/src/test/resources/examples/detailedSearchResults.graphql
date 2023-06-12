@@ -1,0 +1,20 @@
+query detailedSearchResults($keyword:String!, $limit:Int!) {
+    search(keyword: $keyword, limit: $limit) {
+        id,
+        score,
+        properties {
+            type,
+            name,
+            value
+        },
+        plantTextFragments(limit:2) {
+            text
+        },
+        images(limit:3) {
+            id,
+            width,
+            height,
+            url
+        }
+    }
+}

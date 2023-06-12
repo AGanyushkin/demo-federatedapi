@@ -1,0 +1,39 @@
+type Query {
+    search(keyword: String, limit: Int): [PlantSearchResultEntry]
+    properties(plantId: String): [PlantProperty]
+    description(plantId: String, limit: Int): [PlantTextFragment]
+    images(plantId: String, limit: Int): [PlantImage]
+}
+
+enum PlantPropertyType {
+    COLOR
+    HEIGHT
+}
+
+type PlantSearchResultEntry {
+    id: String,
+    score: Float,
+
+    plantTextFragments(limit: Int): [PlantTextFragment],
+    properties: [PlantProperty]
+    images(limit: Int): [PlantImage]
+}
+
+type PlantProperty {
+    id: String,
+    name: String,
+    type: PlantPropertyType,
+    value: String
+}
+
+type PlantTextFragment {
+    id: String,
+    text: String
+}
+
+type PlantImage {
+    id: String,
+    width: Int,
+    height: Int,
+    url: String
+}

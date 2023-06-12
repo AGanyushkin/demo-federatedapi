@@ -1,0 +1,17 @@
+query plantDetails($plantId: String!) {
+    properties(plantId: $plantId) {
+        id,
+        name,
+        type,
+        value
+    }
+    description(plantId: $plantId) {
+        id,
+        text
+    }
+}
+
+# variables
+#{
+#"plantId": "b5cdece0-cabf-4a8e-abfb-8a0ecebb4884"
+#}
